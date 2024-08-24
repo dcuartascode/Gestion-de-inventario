@@ -4,7 +4,7 @@ class Proveedor:
         self.direccion = direccion
         self.telefono = telefono
         self.productos = productos
-        
+
 def registrar_proveedor():
     nombre = input("Nombre del proveedor: ")
     direccion = input("Dirección del proveedor: ")
