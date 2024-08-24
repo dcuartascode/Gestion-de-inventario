@@ -1,20 +1,32 @@
-# Gestion-de-inventario
-# Sistema de Gestión de Inventario
+# Sistema de Gestión de Inventarios
 
 ## Descripción
-Este proyecto implementa un sistema de gestión de inventario que permite manejar productos, categorías, proveedores y bodegas. 
-Está diseñado para ayudar a las empresas a mantener un control eficiente de su stock, proveedores y ubicaciones de almacenamiento.
+Este proyecto es un sistema de gestión de inventarios que permite registrar y gestionar productos, categorías, proveedores y bodegas. Además, permite realizar operaciones de gestión de stock y generar informes detallados.
 
-## Características
-- Registro y gestión de productos
-- Categorización de productos
-- Manejo de proveedores
-- Control de bodegas y su capacidad
-- Gestión de stock (agregar/retirar)
-- Generación de informes de inventario
+## Requerimientos
+- Registrar productos con atributos: nombre, descripción, precio, stock inicial y categoría.
+- Registrar categorías con atributos: nombre y descripción.
+- Registrar proveedores con atributos: nombre, dirección, teléfono y lista de productos suministrados.
+- Registrar bodegas con atributos: nombre, ubicación, capacidad máxima y lista de productos almacenados.
+- Agregar y retirar stock de productos.
+- Calcular el valor total del stock.
+- Gestionar relaciones entre productos, categorías, proveedores y bodegas.
+- Consultar información detallada de productos, categorías, proveedores y bodegas.
+- Generar informes de stock.
 
-## Requisitos
-- Python 3.7 o superior
+## Diagrama de Clases (UML)
+[!Diagrama de Clases UML](https://drive.google.com/file/d/1hsTukLf_f87ar18Yxto-MdzcODhQwAFs/view?usp=sharing)
 
-## Instalación
-1. Clonar este repositorio:
+## Autor
+- Nombre del autor: David Cuartas Hernandez
+- Contacto: davidcuartashernandez@gmail.com
+
+## Estructura del Proyecto
+El proyecto está organizado de la siguiente manera:
+- producto.py
+- categoria.py
+- proveedor.py
+- bodega.py
+- inventario.py
+- gitignore
+- README.md
