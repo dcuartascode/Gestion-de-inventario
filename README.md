@@ -1,7 +1,7 @@
 # Sistema de Gestión de Inventarios
 
-## Autor
-- autores: David Cuartas Hernandez, Juan Sebastian Beron
+## Autores
+David Cuartas Hernandez y Juan Sebastian Beron
 
 ## Descripción
 Este proyecto es un sistema de gestión de inventarios que permite registrar y gestionar productos, categorías, proveedores y bodegas. Además, permite realizar operaciones de gestión de stock y generar informes detallados.
