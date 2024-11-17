@@ -1,26 +1,30 @@
-while True:
-        print("Registro de Entidades")
-        print("")
-        print("1. Registrar Producto")
-        print("2. Registrar Categoría")
-        print("3. Registrar Proveedor")
-        print("4. Registrar Bodega")
-        print("5. Salir")
-        opcion = input("Seleccione una opción: ")
+import tkinter as tk
+from tkinter import messagebox
+from bodega import registrar_bodega
+from categoria import registrar_categoria
+from producto import registrar_producto
+from proveedor import registrar_proveedor
 
-        if opcion == '1':
-            from app.producto import registrar_producto
-            registrar_producto()
-        elif opcion == '2':
-            from app.categoria import registrar_categoria
-            registrar_categoria()
-        elif opcion == '3':
-            from app.proveedor import registrar_proveedor
-            registrar_proveedor()
-        elif opcion == '4':
-            from bodega import registrar_bodega
-            registrar_bodega()
-        elif opcion == '5':
-            break
-        else:
-            print("Opción no válida, intente de nuevo.")
+class InventarioApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Sistema de Inventario")
+        self.crear_interfaz()
+
+    def crear_interfaz(self):
+        tk.Label(self.root, text="SISTEMA DE INVENTARIO", font=("Arial", 14)).pack(pady=10)
+        
+        opciones = [("Registrar Bodega", registrar_bodega), 
+                    ("Registrar Categoría", registrar_categoria), 
+                    ("Registrar Producto", registrar_producto), 
+                    ("Registrar Proveedor", registrar_proveedor)]
+        
+        for texto, comando in opciones:
+            tk.Button(self.root, text=texto, command=comando, width=20).pack(pady=5)
+        
+        tk.Button(self.root, text="Salir", command=self.root.quit, width=20).pack(pady=5)
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = InventarioApp(root)
+    root.mainloop()

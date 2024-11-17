@@ -1,55 +1,39 @@
-class producto:
+import tkinter as tk
+from tkinter import simpledialog, messagebox
+
+class Producto:
     def __init__(self, nombre, descripcion, precio, stock_inicial, categoria):
         self.nombre = nombre
         self.descripcion = descripcion
         self.precio = precio
         self.stock = stock_inicial
         self.categoria = categoria
-        self.proveedores = []
 
     def agregar_stock(self, cantidad):
         if cantidad > 0:
             self.stock += cantidad
-            print(f"Se han agregado {cantidad} unidades al stock. Stock actual: {self.stock}")
+            messagebox.showinfo("Stock actualizado", f"Se han agregado {cantidad} unidades. Stock actual: {self.stock}")
         else:
-            print("La cantidad a agregar debe ser mayor que 0.")
+            messagebox.showerror("Error", "La cantidad a agregar debe ser mayor que 0.")
 
     def retirar_stock(self, cantidad):
         if cantidad > 0 and cantidad <= self.stock:
             self.stock -= cantidad
-            print(f"Se han retirado {cantidad} unidades del stock. Stock actual: {self.stock}")
+            messagebox.showinfo("Stock actualizado", f"Se han retirado {cantidad} unidades. Stock actual: {self.stock}")
         elif cantidad > self.stock:
-            print("No hay suficiente stock para retirar esa cantidad.")
+            messagebox.showerror("Error", "No hay suficiente stock para retirar esa cantidad.")
         else:
-            print("La cantidad a retirar debe ser mayor que 0.")
-
-    def calcular_valor_total(self):
-        valor_total = self.precio * self.stock
-        print(f"El valor total de los productos en stock es: ${valor_total:.2f}")
-        return valor_total
+            messagebox.showerror("Error", "La cantidad a retirar debe ser mayor que 0.")
 
 def registrar_producto():
-    nombre = input("Nombre del producto: ")
-    descripcion = input("Descripción del producto: ")
-    precio = float(input("Precio del producto: "))
-    stock_inicial = int(input("Stock inicial del producto: "))
-    categoria = input("Categoría del producto: ")
-    return producto(nombre, descripcion, precio, stock_inicial, categoria)
+    nombre = simpledialog.askstring("Registro de Producto", "Nombre del producto:")
+    descripcion = simpledialog.askstring("Registro de Producto", "Descripción del producto:")
+    precio = simpledialog.askfloat("Registro de Producto", "Precio del producto:")
+    stock_inicial = simpledialog.askinteger("Registro de Producto", "Stock inicial del producto:")
+    categoria = simpledialog.askstring("Registro de Producto", "Categoría del producto:")
 
-if __name__ == "__main__":
-    producto = registrar_producto()  
-
-    while True:
-        opcion = input("¿Deseas agregar, retirar stock o calcular el valor total? (a/r/c/n): ").lower()
-        if opcion == 'a':
-            cantidad = int(input("Cantidad de stock a agregar: "))
-            producto.agregar_stock(cantidad)
-        elif opcion == 'r':
-            cantidad = int(input("Cantidad de stock a retirar: "))
-            producto.retirar_stock(cantidad)
-        elif opcion == 'c':
-            producto.calcular_valor_total()
-        elif opcion == 'n':
-            break
-        else:
-            print("Opción no válida. Intenta de nuevo.")
+    if nombre and descripcion and precio is not None and stock_inicial is not None and categoria:
+        producto = Producto(nombre, descripcion, precio, stock_inicial, categoria)
+        messagebox.showinfo("Producto registrado", f"Producto registrado: {producto.nombre}, {producto.descripcion}, ${producto.precio}, Stock: {producto.stock}, Categoría: {producto.categoria}")
+    else:
+        messagebox.showerror("Error", "Todos los campos son obligatorios.")
