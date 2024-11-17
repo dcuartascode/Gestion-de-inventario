@@ -24,7 +24,7 @@ if __name__ == "__main__":
                     print(f"{i + 1}. {cat.nombre}")
                 cat_index = int(input("Selecciona el número de la categoría para el producto: ")) - 1
                 categoria_seleccionada = categorias[cat_index]
-                from producto import registrar_producto
+                from app.producto import registrar_producto
                 registrar_producto()
         elif opcion == 'n':
             break

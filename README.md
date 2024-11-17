@@ -1,7 +1,15 @@
 # Sistema de Gestión de Inventarios
 
+## Autor
+- autores: David Cuartas Hernandez, Juan Sebastian Beron
+
 ## Descripción
 Este proyecto es un sistema de gestión de inventarios que permite registrar y gestionar productos, categorías, proveedores y bodegas. Además, permite realizar operaciones de gestión de stock y generar informes detallados.
+
+## Dependencias
+
+- Python 3.x
+- tkinter (incluido en Python estándar)
 
 ## Requerimientos
 - Registrar productos con atributos: nombre, descripción, precio, stock inicial y categoría.
@@ -14,19 +22,16 @@ Este proyecto es un sistema de gestión de inventarios que permite registrar y g
 - Consultar información detallada de productos, categorías, proveedores y bodegas.
 - Generar informes de stock.
 
-## Diagrama de Clases (UML)
-[!Diagrama de Clases UML](https://drive.google.com/file/d/1hsTukLf_f87ar18Yxto-MdzcODhQwAFs/view?usp=sharing)
+## Instrucciones para ejecutar el proyecto
 
-## Autor
-- Nombre del autor: David Cuartas Hernandez
-- Contacto: davidcuartashernandez@gmail.com
+1. Clonar el repositorio.
+2. Instalar las dependencias listadas en `requirements.txt` usando: pip install -r requirements.txt
+3. Ejecutar el archivo `main.py`
 
 ## Estructura del Proyecto
 El proyecto está organizado de la siguiente manera:
-- producto.py
-- categoria.py
-- proveedor.py
-- bodega.py
-- inventario.py
-- gitignore
-- README.md
+- `app/`: Código fuente principal.
+- `docs/`: Documentación del proyecto.
+- `README.md`: Instrucciones y descripción general.
+- `.gitignore`: Archivos a ignorar en el control de versiones.
+- `requirements.txt`: Librerías necesarias.

@@ -9,13 +9,13 @@ while True:
         opcion = input("Seleccione una opción: ")
 
         if opcion == '1':
-            from producto import registrar_producto
+            from app.producto import registrar_producto
             registrar_producto()
         elif opcion == '2':
-            from categoria import registrar_categoria
+            from app.categoria import registrar_categoria
             registrar_categoria()
         elif opcion == '3':
-            from proveedor import registrar_proveedor
+            from app.proveedor import registrar_proveedor
             registrar_proveedor()
         elif opcion == '4':
             from bodega import registrar_bodega
