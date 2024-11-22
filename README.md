@@ -35,3 +35,4 @@ El proyecto está organizado de la siguiente manera:
 - `README.md`: Instrucciones y descripción general.
 - `.gitignore`: Archivos a ignorar en el control de versiones.
 - `requirements.txt`: Librerías necesarias.
+
